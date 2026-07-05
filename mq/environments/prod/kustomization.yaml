@@ -1,0 +1,6 @@
+# MQ prod environment. Populated only by merged promotion PRs from staging —
+# machines propose, humans approve, Argo deploys. Add one directory per queue
+# manager (same shape as dev/mq-qm01) and list it under resources.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources: []

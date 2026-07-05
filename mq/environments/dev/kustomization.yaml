@@ -1,0 +1,8 @@
+# MQ dev environment: one directory per queue manager, each reconciled by its
+# own Argo Application (e.g. dev-mq-qm01-instance, sync wave 300). The
+# mq-qm-dev pipeline's gitops stage writes to these directories via delivery
+# branches; merged PRs (or direct dev pushes) land here.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - mq-qm01

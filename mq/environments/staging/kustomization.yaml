@@ -1,0 +1,7 @@
+# MQ staging environment. Populated only by merged promotion PRs from dev —
+# the promotion pipeline is permanently in PR mode toward staging and prod.
+# Add one directory per queue manager (same shape as dev/mq-qm01) and list it
+# under resources.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources: []

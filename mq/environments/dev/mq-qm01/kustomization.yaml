@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - queuemanager.yaml
+configMapGenerator:
+  - name: mqsc-configmap
+    behavior: create
+    files:
+      - static-definitions.mqsc
+generatorOptions:
+  disableNameSuffixHash: true

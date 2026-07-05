@@ -1,0 +1,8 @@
+# MQ CI environment: the pipeline factory (Pipelines, Tasks) delivered by
+# Argo CD into the ci namespace. Point an Argo Application (CNTK 3-apps
+# layer, e.g. apps-mq-rest-ci-1, sync wave 300) at this directory.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: ci
+resources:
+  - pipelines
