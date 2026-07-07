@@ -46,11 +46,7 @@ spec:
     availability:
       type: SingleInstance
 
-    # Tag 0ca55c9 is the image the 2026-07 validation pipeline built and tested
-    # (from mq-qm01 commit 0ca55c9). The registry path assumes the integrated
-    # registry with the pipeline running in ci — the mq-qm-dev gitops stage
-    # stamps this line on every delivery.
-    image: image-registry.openshift-image-registry.svc:5000/ci/mq-qm01:0ca55c9
+    image: quay.io/apalumbo925/mq-qm01:0.0.6
     imagePullPolicy: Always
 
     storage:
