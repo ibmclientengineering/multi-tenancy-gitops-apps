@@ -1,0 +1,5 @@
+# ACE staging environment: populated by merged promotion PRs from dev.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - createcustomer
