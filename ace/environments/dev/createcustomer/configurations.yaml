@@ -1,11 +1,11 @@
+
 apiVersion: appconnect.ibm.com/v1beta1
 kind: Configuration
 metadata:
   name: createcustomer-barauth
 spec:
-  secretName: createcustomer-barauth-vcjb9
   type: barauth
-  version: 13.0.8.0-r1
+  contents: "eyJhdXRoVHlwZSI6IkJBU0lDX0FVVEgiLCJjcmVkZW50aWFscyI6eyJ1c2VybmFtZSI6ImFub255bW91cyIsInBhc3N3b3JkIjoiYW5vbnltb3VzIn19"
 ---
 apiVersion: appconnect.ibm.com/v1beta1
 kind: Configuration
