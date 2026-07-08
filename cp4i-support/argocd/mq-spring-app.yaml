@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4i-support-mq-spring-app
+  namespace: openshift-gitops
+  labels: { gitops.tier.layer: applications }
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ibmclientengineering/multi-tenancy-gitops-apps.git
+    targetRevision: master
+    path: cp4i-support/mq-spring-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated: { prune: false, selfHeal: true }
+    syncOptions: [ CreateNamespace=false ]

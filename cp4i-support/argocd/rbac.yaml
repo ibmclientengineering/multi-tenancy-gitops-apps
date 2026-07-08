@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4i-support-rbac
+  namespace: openshift-gitops
+  labels: { gitops.tier.layer: applications }
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ibmclientengineering/multi-tenancy-gitops-apps.git
+    targetRevision: master
+    path: cp4i-support/rbac
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-gitops
+  syncPolicy:
+    automated: { prune: false, selfHeal: true }
+    syncOptions: [ CreateNamespace=false ]
