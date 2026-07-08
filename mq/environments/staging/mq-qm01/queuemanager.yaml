@@ -5,12 +5,12 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "300"
     helm.sh/hook-weight: "300"
+  labels:
+    promote-demo: hardened-run
 spec:
   license:
     accept: true
-
     license: L-VEMB-RABZSN
-
     use: NonProduction
   queueManager:
     debug: false
@@ -42,17 +42,14 @@ spec:
       requests:
         cpu: "1"
         memory: 1Gi
-
     availability:
       type: SingleInstance
-
     # Tag 0ca55c9 is the image the 2026-07 validation pipeline built and tested
     # (from mq-qm01 commit 0ca55c9). The registry path assumes the integrated
     # registry with the pipeline running in ci — the mq-qm-dev gitops stage
     # stamps this line on every delivery.
     image: quay.io/apalumbo925/mq-qm01:0.0.6
     imagePullPolicy: Always
-
     storage:
       persistedData:
         enabled: false
@@ -60,16 +57,15 @@ spec:
         type: ephemeral
       recoveryLogs:
         enabled: false
-
   securityContext:
     initVolumeAsRoot: false
   template:
     pod:
       containers:
-      - name: qmgr
-        env:
-        - name: MQSNOAUT
-          value: "yes"
+        - name: qmgr
+          env:
+            - name: MQSNOAUT
+              value: "yes"
   terminationGracePeriodSeconds: 30
   tracing:
     agent: {}

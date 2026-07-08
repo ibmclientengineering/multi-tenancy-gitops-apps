@@ -1,4 +1,3 @@
-# MQ staging environment: promotion PRs copy the proven dev overlay here.
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
