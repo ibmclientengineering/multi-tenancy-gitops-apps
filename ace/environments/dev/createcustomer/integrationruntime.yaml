@@ -5,21 +5,16 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "300"
 spec:
+  license:
+    accept: true
+    license: L-RJGW-BUAA2R
+    use: CloudPakForIntegrationNonProductionFREE
+  version: '13.0'
+  replicas: 1
   barURL:
     - http://ace-bar.tools.svc/createcustomer.bar
   configurations:
     - createcustomer-barauth
     - create-customer-serverconf
     - create-customer-policy
-  license:
-    accept: true
-    license: L-RJGW-BUAA2R
-    use: CloudPakForIntegrationNonProductionFREE
-  logFormat: basic
-  replicas: 1
-  template:
-    spec:
-      metadata:
-        annotations:
-          configuration-last-updated: createcustomer-mcp-ba-creds1783452550
-  version: "13.0"
+
