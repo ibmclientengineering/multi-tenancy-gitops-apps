@@ -5,8 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "300"
     helm.sh/hook-weight: "300"
-  labels:
-    promote-demo: hardened-run
+  labels: {}
 spec:
   license:
     accept: true
