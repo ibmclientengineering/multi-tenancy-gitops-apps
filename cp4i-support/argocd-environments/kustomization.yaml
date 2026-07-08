@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - dev-mq-qm01.yaml
+  - staging-mq-qm01.yaml
+  - dev-ace-createcustomer.yaml
+  - staging-ace-createcustomer.yaml

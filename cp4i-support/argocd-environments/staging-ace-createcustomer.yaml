@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging-ace-createcustomer
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: staging
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ace/environments/staging/createcustomer
+    targetRevision: master
+    repoURL: https://github.com/ibmclientengineering/multi-tenancy-gitops-apps.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
